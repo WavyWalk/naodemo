@@ -1,0 +1,128 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url = "***"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+    id Int @default(autoincrement()) @id
+    account Account?
+    identifier String?
+    roles Role[] @relation(references: [id])
+    eventOrganisers EventOrganiser[]
+    title String?
+    salutation String?
+    firstName String?
+    lastName String?
+    tosAccepted Boolean?
+    newsletterAccepted Boolean?
+}
+
+model Account {
+    id Int @default(autoincrement()) @id
+    userId Int?
+    user User? @relation(fields: [userId], references: [id])
+    email String?
+    password String?
+}
+
+
+model Role {
+    id Int @default(autoincrement()) @id
+    name String?
+    users User[] @relation(references: [id])
+}
+
+model Event {
+    id Int @default(autoincrement()) @id
+    price Float?
+    title String?
+    eventId String?
+    maxAtendees Int?
+    eventFields EventField[] @relation(references: [id])
+    eventTargetGroups EventTargetGroup[] @relation(references: [id])
+    categories Category[] @relation(references: [id])
+    eventDates EventDate[]
+    eventSpeakers EventSpeaker[]
+    eventAddresses EventAddress?
+    eventOrganiserId Int?
+    eventOrganiser EventOrganiser? @relation(fields: [eventOrganiserId], references: [id])
+    eventContact EventContact?
+    additionalInformation String?
+    description String?
+    educationalPoints Int?
+}
+
+model EventField {
+    id Int @default(autoincrement()) @id
+    name String
+    events Event[] @relation(references: [id])
+}
+
+model EventTargetGroup {
+    id Int @default(autoincrement()) @id
+    events Event[] @relation(references: [id])
+    name String?
+}
+
+model Category {
+    id Int @default(autoincrement()) @id
+    events Event[] @relation(references: [id])
+    name String?
+    type String?
+    parentId Int?
+    parent Category? @relation("CategoryHierarchy", fields: [parentId], references: [id])
+    children Category[] @relation("CategoryHierarchy")
+}
+
+model EventDate {
+    id Int @default(autoincrement()) @id
+    eventId Int?
+    event Event? @relation(fields: [eventId], references: [id])
+    date DateTime?
+}
+
+model EventAddress {
+    id Int @default(autoincrement()) @id
+    eventId Int?
+    event Event? @relation(fields: [eventId], references: [id])
+    country String?
+    city String?
+    street String?
+    streetNumber String?
+    zipCode String?
+    geo Json?
+}
+
+model EventOrganiser {
+    id Int @default(autoincrement()) @id
+    events Event[]
+    userId Int?
+    user User? @relation(fields: [userId], references: [id])
+    name String?
+    phone String?
+    website String?
+}
+
+model EventContact {
+    id Int @default(autoincrement()) @id
+    eventId Int?
+    event Event? @relation(fields: [eventId], references: [id])
+    name String?
+    phone String?
+    email String?
+}
+
+model EventSpeaker {
+    id Int @default(autoincrement()) @id
+    title String?
+    firstName String?
+    lastName String?
+    description String?
+}

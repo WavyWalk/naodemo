@@ -1,0 +1,10 @@
+# Prisma Migrate lockfile v1
+
+20200702203919-init
+20200703025802-added-user-fields
+20200703200048-add-fields-to-organiser
+20200703225917-add-category-relation
+20200704012025-create-event-speaker
+20200705002623-add-educational-points
+20200705003150-add-adress
+20200705031208-removed-unused-entities

@@ -1,0 +1,23 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "DeleteModel",
+      "model": "EventField"
+    },
+    {
+      "tag": "DeleteModel",
+      "model": "EventTargetGroup"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Event",
+      "field": "eventFields"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Event",
+      "field": "eventTargetGroups"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+version: '3'
+services:
+#  demoapp-backend:
+#    image: 'node:12.12.0-alpine'
+#    container_name: 'foodlovers_backend'
+#    build: .
+#    ports:
+#      - '3000:3000'
+#      - '9229:9229'
+#    volumes:
+#      - '.:/usr/app'
+#    working_dir: '/usr/app/backend'
+#    command: npm run start
+#    links:
+#      - demoapp-postgress
+
+
+  demoapp-postgress:
+    image: postgres:12.1
+    container_name: demoapp-db
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+    volumes:
+      - ./docker/postgres/data:/var/lib/postgresql/data

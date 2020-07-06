@@ -1,0 +1,8 @@
+/frontend/node_modules/
+/frontend/.idea/
+/docker/postgres/data/
+/backend/dist/index.js
+/backend/node_modules/
+/backend/public/assets/js/
+/backend/public/assets/css/
+/.idea/

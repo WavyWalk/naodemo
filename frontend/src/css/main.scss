@@ -1,0 +1,86 @@
+
+
+.modal-dialog {
+    max-width: 80vw;
+}
+
+.isInvalid {
+    color: red;
+}
+
+.top-menu {
+    border-bottom: thin solid lightgrey;
+    font-size: x-large;
+}
+
+.nav-item {
+    border-right: thin solid grey;
+}
+
+.logged-in-user-name {
+    margin: 0 1rem;
+}
+
+.dashboard-nav-item {
+    margin: 1rem;
+    border: none;
+}
+
+.dashboard-nav {
+    border-bottom: thin solid grey;
+    width: 100%;
+}
+
+.events-index {
+    margin: 2rem 1rem;
+}
+
+.event-new {
+    margin: 2rem 0;
+    border: thin solid lightgrey;
+    padding: 1.5rem;
+}
+
+.numeric-input-group {
+    display: flex;
+    justify-content: center;
+    .form-group {
+        margin: 1rem;
+    }
+}
+
+.form-block {
+    margin: 1rem 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border-top: thin solid grey;
+
+}
+
+
+.tree-select {
+    .react-dropdown-tree-select {
+        display: flex;
+        justify-content: center;
+        .dropdown-trigger {
+            min-width: 500px;
+        }
+    }
+}
+
+.apart-button {
+    margin-top: 1rem;
+}
+
+.list-item-card {
+    margin-top: 1rem;
+}
+
+.event-show-img {
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain
+    }
+}
