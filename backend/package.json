@@ -47,7 +47,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "5.7.7",
     "pg": "^8.0.0",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "reflect-metadata": "^0.1.13",
     "ts-loader": "^6.2.0",
     "typeorm": "^0.2.24",
